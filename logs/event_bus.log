@@ -1,2 +1,4 @@
 2025-04-16 03:21:39,592 - ERROR - NATS connection error: Client.connect() got an unexpected keyword argument 'loop'
 2025-04-16 03:50:03,932 - ERROR - NATS connection error: Client.connect() got an unexpected keyword argument 'loop'
+2025-04-16 04:15:10,704 - ERROR - NATS connection error: Client.connect() got an unexpected keyword argument 'loop'
+2025-04-16 04:21:09,799 - ERROR - NATS connection error: Client.connect() got an unexpected keyword argument 'loop'

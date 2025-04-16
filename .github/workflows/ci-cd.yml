@@ -27,10 +27,10 @@ jobs:
           pip install --upgrade pip setuptools wheel
           pip install -r requirements.txt
 
-      - name: Run Tests
+      - name: Run Dummy Tests
         run: |
           source venv/bin/activate
-          # Add your actual test commands here; simulate success for now.
+          # Replace below with your actual tests if you have them.
           python -c "exit(0)"
 
   deploy:
@@ -46,7 +46,3 @@ jobs:
       - name: Deploy to Server
         run: |
           ssh -o StrictHostKeyChecking=no aiseed@192.168.0.95 "cd ~/ai-ecosystem && source venv/bin/activate && git pull https://github.com/Mrpongalfer/ai-ecosystem.git main && python3 scripts/deploy_agents.py"
-<<<<<<< HEAD
-=======
-# Updated
->>>>>>> 8b82e2d (Trigger update for workflow file)
