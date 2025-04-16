@@ -46,3 +46,7 @@ jobs:
       - name: Deploy to Server
         run: |
           ssh -o StrictHostKeyChecking=no aiseed@192.168.0.95 "cd ~/ai-ecosystem && source venv/bin/activate && git pull https://github.com/Mrpongalfer/ai-ecosystem.git main && python3 scripts/deploy_agents.py"
+<<<<<<< HEAD
+=======
+# Updated
+>>>>>>> 8b82e2d (Trigger update for workflow file)
