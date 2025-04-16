@@ -1,0 +1,11 @@
+flask
+transformers
+torch
+nats-py
+numpy
+aiohttp
+pandas
+tiktoken
+protobuf
+blobfile
+

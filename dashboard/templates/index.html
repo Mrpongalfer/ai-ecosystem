@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Ecosystem Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    .container { max-width: 1200px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; }
+    h1 { text-align: center; }
+    pre { background: #eee; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    .section { margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AI Ecosystem Dashboard</h1>
+    <div class="section">
+      <h2>System Configuration</h2>
+      <pre id="config">{{ config | tojson(indent=4) }}</pre>
+    </div>
+    <div class="section">
+      <h2>Execution Engine Log (Last 50 Lines)</h2>
+      <pre id="exec_log">{% for line in exec_log %}{{ line }}{% endfor %}</pre>
+    </div>
+    <div class="section">
+      <h2>Microkernel Log (Last 50 Lines)</h2>
+      <pre id="micro_log">{% for line in micro_log %}{{ line }}{% endfor %}</pre>
+    </div>
+    <div class="section">
+      <h2>Orchestrator Log (Last 50 Lines)</h2>
+      <pre id="orchestrator_log">{% for line in orchestrator_log %}{{ line }}{% endfor %}</pre>
+    </div>
+    <div class="section">
+      <h2>Agent Manager Log (Last 50 Lines)</h2>
+      <pre id="agent_log">{% for line in agent_log %}{{ line }}{% endfor %}</pre>
+    </div>
+    <div class="section">
+      <h2>Actions</h2>
+      <button onclick="triggerReconfigure()">Trigger Reconfiguration</button>
+    </div>
+  </div>
+  <script>
+    function triggerReconfigure() {
+      fetch("/api/reconfigure", { method: "POST" })
+        .then(response => response.json())
+        .then(data => alert("Reconfiguration triggered: " + JSON.stringify(data)))
+        .catch(err => alert("Error: " + err));
+    }
+  </script>
+</body>
+</html>

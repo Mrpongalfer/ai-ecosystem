@@ -1,0 +1,14 @@
+{
+  "execution_priority": "high",
+  "recursive_refinement": true,
+  "event_bus_url": "nats://192.168.0.95:4222",
+  "log_level": "INFO",
+  "agent_refresh_interval": 10,
+  "ssh_target": "pong@192.168.0.96",
+  "repository_path": "~/ai-ecosystem",
+  "task_list": [
+    "backup_database",
+    "data_cleaning",
+    "report_generation"
+  ]
+}

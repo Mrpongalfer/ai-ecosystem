@@ -1,0 +1,5 @@
+# Update dependencies daily at 2am.
+0 2 * * * cd ~/ai-ecosystem && source venv/bin/activate && pip install --upgrade -r requirements.txt && deactivate
+
+# Log rotation: Archive logs older than 7 days daily at 3am.
+0 3 * * * find ~/ai-ecosystem/logs/ -type f -mtime +7 -exec mv {} ~/ai-ecosystem/logs/archive/ \;
